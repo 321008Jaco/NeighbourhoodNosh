@@ -1,0 +1,176 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1; /* Light Gray Background */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #2c3e50; /* Dark Gray Background for Header */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #ecf0f1; /* Light Gray Logo Text */
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1; /* Light Gray Navigation Links */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #f39c12; /* Warm Orange Hover Effect */
+}
+
+/* Hero Section with Parallax */
+.hero {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1500x600') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-top: 60px;
+}
+
+.hero-content {
+    background-color: rgba(44, 62, 80, 0.7); /* Dark Gray Background with Opacity */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ecf0f1; /* Light Gray for Hero Text */
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ecf0f1; /* Light Gray for Hero Description */
+}
+
+.cta-button {
+    background-color: #f39c12; /* Warm Orange CTA Button */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e67e22; /* Slightly Darker Orange on Hover */
+}
+
+/* Intro Section with Scroll Animation */
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #3498db; /* Calming Blue Heading */
+}
+
+.intro p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Features Section with Hover Effect */
+.features {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 50px;
+    background-color: #ecf0f1;
+}
+
+.feature-box {
+    width: 30%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.feature-box.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.feature-box h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #2ecc71; /* Fresh Green for Feature Titles */
+}
+
+.feature-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Dark Gray Footer Background */
+    color: #ecf0f1; /* Light Gray Text */
+    text-align: center;
+    padding: 20px 0;
+}

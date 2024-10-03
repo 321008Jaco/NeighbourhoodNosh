@@ -1,0 +1,157 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1; /* Light Gray Background */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #2c3e50; /* Dark Gray Background for Header */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #ecf0f1; /* Light Gray Logo Text */
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1; /* Light Gray Navigation Links */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #f39c12; /* Warm Orange Hover Effect */
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    height: 60vh;
+    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-top: 60px;
+}
+
+.contact-content {
+    background-color: rgba(44, 62, 80, 0.7); /* Dark Gray Background with Opacity */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ecf0f1; /* Light Gray for Hero Text */
+}
+
+.contact-content p {
+    font-size: 20px;
+    color: #ecf0f1; /* Light Gray for Description */
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    font-size: 36px;
+    color: #3498db; /* Calming Blue for Heading */
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container textarea:focus {
+    border-color: #3498db; /* Calming Blue Focus Effect */
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.form-container .btn {
+    background-color: #2ecc71; /* Fresh Green Button */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn:hover {
+    background-color: #27ae60; /* Darker Green on Hover */
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Dark Gray Footer Background */
+    color: #ecf0f1; /* Light Gray Text */
+    text-align: center;
+    padding: 20px 0;
+}

@@ -1,0 +1,112 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+header {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #ecf0f1;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+/* Tracking Section */
+.tracking-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tracking-section h3 {
+    font-size: 36px;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.tracking-section input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tracking-section input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+}
+
+.tracking-section .btn {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tracking-section .btn:hover {
+    background-color: #27ae60;
+}
+
+.tracking-info {
+    margin-top: 20px;
+}
+
+.tracking-info h4 {
+    font-size: 24px;
+    color: #3498db;
+}
+
+.tracking-info p {
+    font-size: 18px;
+    color: #666;
+}
