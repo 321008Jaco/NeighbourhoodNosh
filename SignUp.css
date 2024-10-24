@@ -1,0 +1,178 @@
+/* General Styles */
+body {
+    background-color: #1D1D1D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container to hold both sections */
+.container {
+    position: relative;
+    width: 1063px;
+    height: 891px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image section */
+.image-section {
+    background-image: url('./Assets/SignInUp.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    margin-left: 1px;
+    margin-top: 80px;
+    width: 963px; 
+    height: 567px; 
+    border-radius: 44px;
+    position: absolute; 
+    z-index: 2; 
+    top: 0;
+    left: 0;
+}
+
+.form-section h5 {
+    color: white;
+    font-size: 150px;
+    margin-left: 225px;
+    box-shadow: black;
+    margin-left: -310px;
+    margin-top: -20px;
+}
+
+/* Form section */
+.form-section {
+    background-color: #00403D; 
+    width: 570px; 
+    height: 691px; 
+    margin-right: -686px;
+    margin-bottom: -60px;
+    border-radius: 44px;
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 3; 
+    margin-left: -220px; 
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -50px;
+    width: 90%;
+    text-align: left;
+    padding: 100px;
+}
+
+form h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 36px;
+}
+
+form hr {
+    width: 300px;
+    border-color: #00E8DD;
+    margin-left: -5px;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+/* Style for all labels except the checkbox labels */
+form label:not(.terms label):not(.notifications label) {
+    color: #fff; 
+    font-size: 20px; 
+    font-weight: 600; 
+    letter-spacing: 0.05em; 
+    margin-bottom: 5px; 
+    display: block; 
+    text-transform: uppercase; 
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #00E8DD;
+    padding-left: 3px;
+    border-radius: 0;
+    font-size: 14px;
+    background-color: transparent;
+    color: #fff;
+}
+
+/* Focused input styles */
+form input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #00E8DD;
+    transition: border-color 0.3s ease;
+}
+
+/* Styles for terms and notifications checkboxes */
+.terms, .notifications {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms input, .notifications input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.terms label, .notifications label {
+    font-size: 14px;
+    color: #fff; 
+    font-weight: normal; 
+}
+
+/* Button styles */
+button {
+    width: 120px;
+    height: 50px;
+    padding: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #00403D;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b3cfcd;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .form-section {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .image-section {
+        width: 100%;
+        height: 400px;
+    }
+}
