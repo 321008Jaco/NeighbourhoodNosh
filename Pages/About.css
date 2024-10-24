@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,139 +6,505 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ecf0f1; /* Light Gray Background */
     color: #333;
-    scroll-behavior: smooth;
+    background-color: #EDECEA;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Navigation Bar */
 header {
-    background-color: #2c3e50; /* Dark Gray Background for Header */
-    padding: 10px 0;
+    background-color: transparent;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+    top: -100px; 
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo h1 {
-    color: #ecf0f1; /* Light Gray Logo Text */
-    font-size: 24px;
+.logo {
+    height: 60px;
+    margin-left: -125px;
 }
 
+.logo img {
+    height: 60px;
+}
+
+.line hr {
+    width: 125px;
+    border-color: white;
+}
+
+/* Nav Links (Desktop View) */
 .nav-links {
     list-style: none;
+    display: flex;
 }
 
 .nav-links li {
-    display: inline-block;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #ecf0f1; /* Light Gray Navigation Links */
+    position: relative;
+    color: white;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #f39c12; /* Warm Orange Hover Effect */
+    color: white;
 }
 
-/* About Us Hero Section */
-.about-hero {
-    height: 60vh;
-    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
+.nav-links a:hover::after {
+    width: 90%;
+}
+
+.nav-extras {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-right: -100px;
+}
+
+.phone-number {
+    margin-right: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+}
+
+.account {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.cart-link {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.cart-link svg {
+    fill: transparent;
+    width: 40px;
+    height: 40px;
+    transition: fill 0.3s ease;
+}
+
+.cart-link:hover svg {
+    fill: white; 
+}
+
+/* Media Queries for Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-extras {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-color: #01524e;
     text-align: center;
-    color: #fff;
-    position: relative;
-    margin-top: 60px;
+    padding: 150px 20px 100px;
 }
 
-.about-content {
-    background-color: rgba(44, 62, 80, 0.7); /* Dark Gray Background with Opacity */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.about-content h2 {
+.hero h1 {
+    color: white;
     font-size: 48px;
     margin-bottom: 20px;
-    color: #ecf0f1; /* Light Gray for Hero Text */
 }
 
-.about-content p {
-    font-size: 20px;
-    color: #ecf0f1; /* Light Gray for Description */
+.hero p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 70px;
 }
 
-/* Mission Section */
-.mission {
-    padding: 50px 20px;
+.hero-images {
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+    padding-bottom: 50px;
+    gap: 20px;
+}
+
+.hero-images img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Content Sections */
+.content-section {
     background-color: #fff;
+    padding: 50px 20px;
     text-align: center;
 }
 
-.mission-container {
-    max-width: 800px;
-    margin: 0 auto;
+.content-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
 }
 
-.mission h3 {
+.paragraphs {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Adds space between paragraphs */
+}
+
+.paragraphs p {
+    font-size: 18px;
+    color: #666;
+    width: 45%; /* Each paragraph takes 45% of the width */
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .paragraphs {
+        flex-direction: column; /* Stacks paragraphs on smaller screens */
+    }
+
+    .paragraphs p {
+        width: 100%; /* Each paragraph takes full width on smaller screens */
+    }
+}
+
+/* Empower Section */
+.empower-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Adds spacing between the image and paragraph */
+    margin-top: 40px;
+}
+
+.empower-img {
+    width: 45%; /* Adjusts the width of the image */
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.empower-section p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    width: 50%; /* Adjusts the width of the paragraph */
+    text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .empower-section {
+        flex-direction: column; /* Stacks the image and text on top of each other */
+        text-align: center;
+    }
+
+    .empower-img, .empower-section p {
+        width: 100%; /* Full width for both the image and text on smaller screens */
+    }
+
+    .empower-section p {
+        text-align: center; /* Center text on mobile */
+    }
+}
+
+/* Growth Section */
+.growth-section {
+    background-color: #F4F4F4;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.growth-section h2 {
     font-size: 36px;
-    color: #3498db; /* Calming Blue for Mission Heading */
+    color: #333;
     margin-bottom: 20px;
 }
 
-.mission p {
+.growth-section p {
     font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.growth-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.growth-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.growth-card h3 {
+    font-size: 24px;
+    color: #00403D;
+    margin-bottom: 15px;
+}
+
+.growth-card p {
+    font-size: 16px;
     color: #666;
 }
 
-/* Why Choose Section */
-.why-choose {
-    padding: 50px 20px;
-    background-color: #ecf0f1;
-    text-align: center;
+/* Icon Styling */
+.growth-card i {
+    font-size: 40px;
+    color: #00403D;
+    margin-bottom: 15px;
 }
 
-.choose-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
+/* Responsive Design for Growth Section */
+@media (max-width: 768px) {
+    .growth-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.why-choose h3 {
-    font-size: 36px;
-    color: #3498db; /* Calming Blue for Heading */
-    margin-bottom: 20px;
-}
-
-.choose-list {
-    list-style: none;
-    padding: 0;
-}
-
-.choose-list li {
-    font-size: 18px;
-    color: #2ecc71; /* Fresh Green for List Items */
-    margin-bottom: 10px;
+    .growth-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 /* Footer */
-footer {
-    background-color: #2c3e50; /* Dark Gray Footer Background */
-    color: #ecf0f1; /* Light Gray Text */
+.footer {
+    background-color: #00403D;
+    color: #f4f4f4;
     text-align: center;
-    padding: 20px 0;
+    padding: 50px 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-us p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #00403D;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px 50px;
+    position: relative;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-top p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-us p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: -50px;
+}
+
+.footer-logo {
+    margin: 30px 0;
+}
+
+.footer-logo img {
+    width: 120px; 
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-bottom ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -100px; 
+    left: 0;
+    width: 100%;
+    height: 150px; 
+    background-color: #f4f4f4; 
+    clip-path: ellipse(50% 100% at 50% 0%); 
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-links {
+        flex-wrap: wrap;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
+        width: 100%;
+    }
+
+    .why-us-cards {
+        flex-direction: column;
+    }
+
+    .why-us-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .why-us-cards {
+        flex-direction: column;
+    }
+
+    .why-us-card {
+        width: 100%;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 20px 0;
+    }
 }

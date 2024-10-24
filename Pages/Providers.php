@@ -17,8 +17,9 @@
             <hr>
         </div>
         <ul class="nav-links">
+            <li><a href="../Index.php">Home</a></li>
             <li><a href="#">Find Food</a></li>
-            <li><a href="./Pages/About.php">About Us</a></li>
+            <li><a href="../Pages/About.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
 
         </ul>

@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,151 +6,239 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ecf0f1; /* Light Gray Background */
     color: #333;
-    scroll-behavior: smooth;
+    background-color: #EDECEA;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: #00403D;
+    padding: 40px;
+    border-radius: 15px;
+    width: 45%;
+    color: white;
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #00E8DD;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: white;
+    color: #00403D;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #b3cfcd;
+}
+
+/* Contact Info */
+.contact-info {
+    width: 45%;
+}
+
+.info-box-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    width: 48%;
+}
+
+.info-box i {
+    font-size: 30px;
+    color: #00403D;
+    margin-bottom: 10px;
+}
+
+.info-box h3 {
+    font-size: 24px;
+    color: #00403D;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+    }
 }
 
 /* Navigation Bar */
 header {
-    background-color: #2c3e50; /* Dark Gray Background for Header */
-    padding: 10px 0;
+    background-color: transparent;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
-    top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+    top: -100px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.logo h1 {
-    color: #ecf0f1; /* Light Gray Logo Text */
-    font-size: 24px;
+.logo img {
+    height: 60px;
+}
+
+.line hr {
+    width: 125px;
+    border-color: white;
 }
 
 .nav-links {
     list-style: none;
+    display: flex;
 }
 
 .nav-links li {
-    display: inline-block;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
-    color: #ecf0f1; /* Light Gray Navigation Links */
+    color: white;
     text-decoration: none;
     font-size: 16px;
-}
-
-.nav-links a:hover {
-    color: #f39c12; /* Warm Orange Hover Effect */
-}
-
-/* Contact Hero Section */
-.contact-hero {
-    height: 60vh;
-    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    margin-top: 60px;
-}
-
-.contact-content {
-    background-color: rgba(44, 62, 80, 0.7); /* Dark Gray Background with Opacity */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.contact-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #ecf0f1; /* Light Gray for Hero Text */
-}
-
-.contact-content p {
-    font-size: 20px;
-    color: #ecf0f1; /* Light Gray for Description */
-}
-
-/* Contact Form Section */
-.contact-form-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ecf0f1;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-container h3 {
-    font-size: 36px;
-    color: #3498db; /* Calming Blue for Heading */
-    margin-bottom: 20px;
-}
-
-.form-container label {
-    display: block;
-    text-align: left;
-    margin-bottom: 10px;
-    color: #333;
     font-weight: bold;
 }
 
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.nav-extras {
+    display: flex;
+    align-items: center;
 }
 
-.form-container input[type="text"]:focus,
-.form-container input[type="email"]:focus,
-.form-container textarea:focus {
-    border-color: #3498db; /* Calming Blue Focus Effect */
-    outline: none;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+.phone-number {
+    margin-right: 20px;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
 }
 
-.form-container .btn {
-    background-color: #2ecc71; /* Fresh Green Button */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+.account {
+    margin-right: 20px;
+    color: white;
     text-decoration: none;
     font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
-.form-container .btn:hover {
-    background-color: #27ae60; /* Darker Green on Hover */
+.cart-link svg {
+    fill: transparent;
+    width: 40px;
+    height: 40px;
+    transition: fill 0.3s ease;
 }
+
+.cart-link:hover svg {
+    fill: white;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #01524e;
+    text-align: center;
+    padding: 150px 20px 100px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 70px;
+}
+
 
 /* Footer */
-footer {
-    background-color: #2c3e50; /* Dark Gray Footer Background */
-    color: #ecf0f1; /* Light Gray Text */
+.footer {
+    background-color: #00403D;
+    color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 50px;
+}
+
+.footer-logo img {
+    width: 120px;
+    margin: 30px auto;
+}
+
+.footer-bottom p {
+    font-size: 14px;
 }

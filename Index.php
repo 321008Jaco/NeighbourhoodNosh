@@ -17,10 +17,11 @@
             <hr>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Find Food</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Restaurants</a></li>
+        <li><a href="#">Home</a></li>
+            <li><a href="./Pages/Providers.php">Find Food</a></li>
             <li><a href="./Pages/About.php">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+
         </ul>
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>

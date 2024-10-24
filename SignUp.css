@@ -35,6 +35,15 @@ body {
     left: 0;
 }
 
+.image-section p {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 530px;
+    margin-left: 50px;
+    text-decoration: underline;
+}
+
 .form-section h5 {
     color: white;
     font-size: 150px;
@@ -136,7 +145,7 @@ form input:focus {
 
 .terms label, .notifications label {
     font-size: 14px;
-    color: #fff; 
+    color: #fff;
     font-weight: normal; 
 }
 
@@ -147,7 +156,7 @@ button {
     padding: 15px;
     background-color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 18px;
     font-weight: bold;
     color: #00403D;
@@ -156,6 +165,13 @@ button {
 
 button:hover {
     background-color: #b3cfcd;
+}
+
+#signup-form #error-message {
+    color: #ff4d4d; /* Red color for error messages */
+    font-size: 16px;
+    margin-top: 10px;
+    display: none; /* Hidden by default */
 }
 
 /* Media Query for Responsiveness */
