@@ -17,11 +17,10 @@
             <hr>
         </div>
         <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="./Pages/Providers.php">Find Food</a></li>
             <li><a href="./Pages/About.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
-
         </ul>
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>
@@ -38,40 +37,56 @@
 </header>
 
 <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Discover restaurants that deliver near you.</h2>
-            <form class="search-bar">
-                <input type="text" placeholder="Enter your delivery address">
-                <button type="submit">Go</button>
-            </form>
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-content">
+        <h2>Discover restaurants that deliver near you.</h2>
+        <form class="search-bar">
+            <input type="text" placeholder="Enter your delivery address">
+            <button type="submit">Go</button>
+        </form>
+    </div>
+</section>
 
 <!-- Features Section -->
-        <h2 class="cards">Here Are Some <span>Suggestions!</span></h2>
-        <div class="view-more">
-        <a href="#">View More <span>&rarr;</span></a>
-        </div>
-    <section class="features">
-        <div class="feature-box">
-            <img src="./Assets/Pizza.jpeg" alt="Pizza">
-            <h4>Pizza</h4>
-            <a href="#">View Now</a>
-        </div>
-        <div class="feature-box">
-            <img src="./Assets/Burger.jpeg" alt="Burger">
-            <h4>Burgers</h4>
-            <a href="#">View Now</a>
-        </div>
-        <div class="feature-box">
-            <img src="./Assets/Sushi.jpeg" alt="Sushi">
-            <h4>Sushi</h4>
-            <a href="#">View Now</a>
-        </div>
-    </section>
+<h2 class="cards">Here Are Some restaurant <span>Suggestions!</span></h2>
+<div class="view-more">
+    <a href="#">View More <span>&rarr;</span></a>
+</div>
+<section class="features">
+    <?php
+    // Database connection (replace with your actual connection details)
+    $conn = new mysqli("localhost", "root", "", "localbite");
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Fetch 3 random restaurants from the table
+    $sql = "SELECT ResName, RestaurantImg, ResLocation FROM restaurants ORDER BY RAND() LIMIT 3";
+    $result = $conn->query($sql);
+
+    // Display each restaurant as a card
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="feature-box">';
+            echo '<img src="' . $row["RestaurantImg"] . '" alt="' . $row["ResName"] . '">';
+            echo '<h4>' . $row["ResName"] . '</h4>';
+            echo '<p>' . $row["ResLocation"] . '</p>';
+            echo '<a href="#">View Now</a>';
+            echo '</div>';
+        }
+    } else {
+        echo "No restaurants found.";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+</section>
+
 <!-- Why Us Section -->
-    <section class="why-us">
+<section class="why-us">
     <h2>Why Choose <span>Us?</span></h2>
     <p>When you choose us, you'll feel the benefit of 10 years' experience in food delivery services. We know the industry inside and out, ensuring quality, speed, and reliability for every order.</p>
 
@@ -102,15 +117,15 @@
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+<!-- Footer -->
+<footer class="footer">
     <div class="footer-top">
-    <p>The Open Window Institute <br> John Vorster Drive & Nellmapius Drive <br> Southdowns, Irene <br> Centurion, 0062 <br> South Africa</p>
-    <div class="contact-us">
-        <p>Contact Us</p>
+        <p>The Open Window Institute <br> John Vorster Drive & Nellmapius Drive <br> Southdowns, Irene <br> Centurion, 0062 <br> South Africa</p>
+        <div class="contact-us">
+            <p>Contact Us</p>
+        </div>
+        <p>Admissions Office <br> Tel: +27 12 648 9200 <br> Email: info@openwindow.co.za</p>
     </div>
-    <p>Admissions Office <br> Tel: +27 12 648 9200 <br> Email: info@openwindow.co.za</p>
-</div>
     <div class="footer-logo">
         <img src="./Assets/Open-Window.png" alt="Open Window Logo">
     </div>
@@ -127,18 +142,11 @@
 
 <script>
     const navbar = document.querySelector('header');
-
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop === 0) {
-            navbar.style.top = "0";
-        } else {
-            navbar.style.top = "-100px"; 
-        }
+        navbar.style.top = scrollTop === 0 ? "0" : "-100px";
     });
 </script>
-
 
 </body>
 </html>
