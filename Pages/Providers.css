@@ -190,113 +190,184 @@ nav {
 .filter-section {
     display: flex;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 30px 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
 }
 
-.filter-options form {
-    display: flex;
-    gap: 20px;
-}
-
-.filter-options select,
-#search {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    font-size: 16px;
-}
-
-#search {
-    width: 250px;
-}
-
-/* Browse Food Section */
-.browse-food-section {
-    margin-top: 100px;
-    padding: 50px 0;
-}
-
-.filter-box {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    max-width: 300px;
-}
-
-.filter-box h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #00403D;
-}
-
-.filter-category h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.filter-category label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.search-bar input {
+.search-bar-container {
+    max-width: 600px;
     width: 100%;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-container form {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+#search {
+    width: 100%;
+    padding: 12px 20px;
     font-size: 16px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 15px;
+    border-radius: 5px 0 0 5px;
     outline: none;
 }
 
-.available-food {
-    margin-bottom: 120px;
+button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #00403D;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.available-food h2 {
-    text-align: center;
-    margin-bottom: 25px;
+button[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Categories Scroll Bar */
+.categories {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-scroll {
+    display: flex;
+    gap: 15px;
+}
+
+.category-btn {
+    background-color: #00403D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #333;
+}
+
+.category-btn:focus {
+    outline: none;
+    background-color: #333;
 }
 
 .food-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
+
+    /* Styling for Search Section */
+    .search-section {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    #search-bar {
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    /* Styling for Category Scroll Bar */
+    .category-scroll {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        gap: 10px;
+        white-space: nowrap;
+    }
+
+    .category-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #00403D;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .category-btn:hover {
+        color: #00403D;
+        background-color: #fff;
+    }
+
 .food-item {
-    width: 22%; 
+    width: calc(25% - 20px); /* 25% width with gap adjustment */
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     transition: transform 0.3s ease;
+    position: relative;
+    min-height: 350px;
 }
 
 .food-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .food-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .food-item h4 {
-    margin: 15px 0;
+    font-size: 1.2rem;
     color: #00403D;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    line-height: 1.2;
+}
+
+.food-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 15px;
+    line-height: 1.2;
+}
+
+.food-item .price {
+    font-size: 1rem;
+    color: #00403D;
+    font-weight: bold;
+    margin: 5px 0 15px;
 }
 
 .food-item a {
@@ -305,13 +376,55 @@ nav {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    margin-top: auto;
 }
 
 .food-item a:hover {
     background-color: #333;
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .food-item {
+        width: calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .food-item {
+        width: 100%; /* One item per row on small screens */
+    }
+}
+
 /* Footer */
+.footer {
+    background-color: #00403D;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 300px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-us p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .footer {
     background-color: #00403D;
     color: #fff;
@@ -390,17 +503,65 @@ nav {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .food-item {
-        width: 45%;
+    .nav-links {
+        flex-wrap: wrap;
     }
-}
 
-@media (max-width: 768px) {
-    .food-item {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-box {
         width: 100%;
     }
 
-    .filter-box {
-        max-width: 100%;
+    .why-us-cards {
+        flex-direction: column;
+    }
+
+    .why-us-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .why-us-cards {
+        flex-direction: column;
+    }
+
+    .why-us-card {
+        width: 100%;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 20px 0;
     }
 }

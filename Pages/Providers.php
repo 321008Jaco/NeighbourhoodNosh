@@ -21,7 +21,6 @@
             <li><a href="#">Find Food</a></li>
             <li><a href="../Pages/About.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
-
         </ul>
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>
@@ -39,33 +38,26 @@
 
 <!-- Hero Section -->
 <section class="hero">
-        <div class="hero-content">
-            <h2>Browse our food and restaurants.</h2>
-        </div>
-    </section>
+    <div class="hero-content">
+        <h2>Browse our food and restaurants.</h2>
+    </div>
+</section>
 
-<!-- Filter Section -->
-<section class="filter-section">
-    <div class="filter-options">
-        <form id="filter-form">
-            <select id="food-type" name="food-type">
-                <option value="all">All Food</option>
-                <option value="pizza">Pizza</option>
-                <option value="burgers">Burgers</option>
-                <option value="sushi">Sushi</option>
-                <option value="pasta">Pasta</option>
-            </select>
+<!-- Search Section -->
+<section class="search-section">
+    <input type="text" id="search-bar" placeholder="Search for food or restaurants..." onkeyup="searchItems()">
+</section>
 
-            <select id="restaurant" name="restaurant">
-                <option value="all">All Restaurants</option>
-                <option value="marios-pizza">Mario's Pizza</option>
-                <option value="sushi-house">Sushi House</option>
-                <option value="burger-spot">Burger Spot</option>
-                <option value="pasta-palace">Pasta Palace</option>
-            </select>
-
-            <input type="text" id="search" name="search" placeholder="Search for food or restaurants...">
-        </form>
+<!-- Categories Scroll Bar -->
+<section class="categories">
+    <div class="category-scroll">
+        <button class="category-btn" onclick="filterCategory('All')">All</button>
+        <?php
+        $categories = ['Burgers', 'Pizza', 'Seafood', 'Steak and Meat', 'Pasta and Italian', 'Curries and Bowls', 'Appetizers and Small Plates', 'Desserts', 'Sandwiches and Wraps', 'Grill and Barbecue'];
+        foreach ($categories as $category) {
+            echo "<button class='category-btn' onclick='filterCategory(\"$category\")'>$category</button>";
+        }
+        ?>
     </div>
 </section>
 
@@ -73,105 +65,34 @@
 <section class="available-food">
     <h2>Available Options</h2>
     <div class="food-grid" id="food-grid">
-        <div class="food-item" data-type="pizza" data-restaurant="marios-pizza">
-            <img src="./Assets/Pizza.jpeg" alt="Pizza">
-            <h4>Pizza</h4>
-            <p>From Mario's Pizza</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="burgers" data-restaurant="burger-spot">
-            <img src="./Assets/Burger.jpeg" alt="Burger">
-            <h4>Burger</h4>
-            <p>From Burger Spot</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="sushi" data-restaurant="sushi-house">
-            <img src="./Assets/Sushi.jpeg" alt="Sushi">
-            <h4>Sushi</h4>
-            <p>From Sushi House</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pasta" data-restaurant="pasta-palace">
-            <img src="./Assets/Pasta.jpeg" alt="Pasta">
-            <h4>Pasta</h4>
-            <p>From Pasta Palace</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pizza" data-restaurant="marios-pizza">
-            <img src="./Assets/Pizza.jpeg" alt="Pizza">
-            <h4>Pizza</h4>
-            <p>From Mario's Pizza</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="burgers" data-restaurant="burger-spot">
-            <img src="./Assets/Burger.jpeg" alt="Burger">
-            <h4>Burger</h4>
-            <p>From Burger Spot</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="sushi" data-restaurant="sushi-house">
-            <img src="./Assets/Sushi.jpeg" alt="Sushi">
-            <h4>Sushi</h4>
-            <p>From Sushi House</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pasta" data-restaurant="pasta-palace">
-            <img src="./Assets/Pasta.jpeg" alt="Pasta">
-            <h4>Pasta</h4>
-            <p>From Pasta Palace</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pizza" data-restaurant="marios-pizza">
-            <img src="./Assets/Pizza.jpeg" alt="Pizza">
-            <h4>Pizza</h4>
-            <p>From Mario's Pizza</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="burgers" data-restaurant="burger-spot">
-            <img src="./Assets/Burger.jpeg" alt="Burger">
-            <h4>Burger</h4>
-            <p>From Burger Spot</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="sushi" data-restaurant="sushi-house">
-            <img src="./Assets/Sushi.jpeg" alt="Sushi">
-            <h4>Sushi</h4>
-            <p>From Sushi House</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pasta" data-restaurant="pasta-palace">
-            <img src="./Assets/Pasta.jpeg" alt="Pasta">
-            <h4>Pasta</h4>
-            <p>From Pasta Palace</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pizza" data-restaurant="marios-pizza">
-            <img src="./Assets/Pizza.jpeg" alt="Pizza">
-            <h4>Pizza</h4>
-            <p>From Mario's Pizza</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="burgers" data-restaurant="burger-spot">
-            <img src="./Assets/Burger.jpeg" alt="Burger">
-            <h4>Burger</h4>
-            <p>From Burger Spot</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="sushi" data-restaurant="sushi-house">
-            <img src="./Assets/Sushi.jpeg" alt="Sushi">
-            <h4>Sushi</h4>
-            <p>From Sushi House</p>
-            <a href="#">Order Now</a>
-        </div>
-        <div class="food-item" data-type="pasta" data-restaurant="pasta-palace">
-            <img src="./Assets/Pasta.jpeg" alt="Pasta">
-            <h4>Pasta</h4>
-            <p>From Pasta Palace</p>
-            <a href="#">Order Now</a>
-        </div>
+        <?php
+        $conn = new mysqli("localhost", "root", "", "localbite");
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        
+        // Ensure that MenuID is selected in the query
+        $sql = "SELECT MenuID, ItemName, Description, Price, MenuImg, Categories FROM restaurantsmenu ORDER BY RAND() LIMIT 8";
+        
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='food-item' data-category='{$row["Categories"]}'>";
+                echo "<img src='{$row["MenuImg"]}' alt='{$row["ItemName"]}'>";
+                echo "<h4>{$row["ItemName"]}</h4>";
+                echo "<p>{$row["Description"]}</p>";
+                echo "<p>Price: R{$row["Price"]}</p>";
+                // Use MenuID in the link
+                echo "<a href='Order.php?MenuID={$row["MenuID"]}'>Order Now</a>";
+                echo "</div>";
+            }
+        } else {
+            echo "No items found.";
+        }
+        $conn->close();
+        ?>
     </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="footer">
@@ -197,18 +118,34 @@
 </footer>
 
 <script>
-    const navbar = document.querySelector('header');
+    function filterCategory(category) {
+        const foodItems = document.querySelectorAll('.food-item');
+        foodItems.forEach(item => {
+            item.style.display = category === 'All' || item.getAttribute('data-category') === category ? 'block' : 'none';
+        });
+    }
 
+    function searchItems() {
+        const searchInput = document.getElementById('search-bar').value.toLowerCase();
+        const foodItems = document.querySelectorAll('.food-item');
+        foodItems.forEach(item => {
+            const itemName = item.getAttribute('data-name').toLowerCase();
+            const itemDescription = item.getAttribute('data-description').toLowerCase();
+            if (itemName.includes(searchInput) || itemDescription.includes(searchInput)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    const navbar = document.querySelector('header');
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop === 0) {
-            navbar.style.top = "0";
-        } else {
-            navbar.style.top = "-100px"; 
-        }
+        navbar.style.top = scrollTop === 0 ? "0" : "-100px";
     });
+
 </script>
-<script src="Providers.js"></script>
+
 </body>
 </html>
