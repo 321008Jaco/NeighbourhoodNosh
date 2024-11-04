@@ -1,0 +1,312 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F7F7F7;
+    color: #333;
+}
+
+/* Navigation Bar */
+header {
+    background-color: transparent;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+    top: -100px; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 60px;
+    margin-left: -125px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.line hr {
+    width: 125px;
+    border-color: #00403D;
+}
+
+/* Nav Links (Desktop View) */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #00403D;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00403D;
+}
+
+.nav-links a:hover::after {
+    width: 90%;
+}
+
+.nav-extras {
+    display: flex;
+    align-items: center;
+    margin-right: -100px;
+}
+
+.phone-number {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #00403D;
+    font-weight: bold;
+}
+
+.account {
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.cart-link {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.cart-link svg {
+    fill: transparent;
+    width: 40px;
+    height: 40px;
+    transition: fill 0.3s ease;
+}
+
+.cart-link:hover svg {
+    fill: #00403D; 
+}
+
+/* Media Queries for Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-extras {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+}
+
+.hero {
+    height: 150px; 
+    color: #fff;
+}
+
+/* Retain navigation styling as specified */
+
+/* Restaurant Details */
+.restaurant-details {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.restaurant-details img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+/* Review Form Section */
+.review-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.review-section h3 {
+    margin-bottom: 10px;
+    color: #00403D;
+    font-weight: bold;
+}
+
+.review-section label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.review-section select,
+.review-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    resize: vertical;
+    outline: none;
+}
+
+.review-section textarea {
+    min-height: 80px;
+}
+
+.review-section button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00403D;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: flex-end;
+}
+
+.review-section button:hover {
+    background-color: #333;
+}
+/* Dishes Menu Section */
+.dishes {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.dishes h2 {
+    color: #00403D;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Dish Item Styling */
+.dish-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.dish-item:hover {
+    transform: translateY(-5px);
+}
+
+.dish-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.dish-item h3 {
+    font-size: 1.1em;
+    color: #00403D;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dish-item p {
+    color: #555;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.dish-item p strong {
+    color: #333;
+}
+
+.order-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #00403D;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+    background-color: #333;
+}

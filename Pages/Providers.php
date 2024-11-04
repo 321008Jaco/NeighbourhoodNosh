@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +24,10 @@
             <li><a href="../Index.php">Home</a></li>
             <li><a href="#">Find Food</a></li>
             <li><a href="../Pages/About.php">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="../Pages/Contact.php">Contact Us</a></li>
+            <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
+                <li><a href="../Pages/AdminDashboard.php">Admin Dashboard</a></li>
+            <?php endif; ?>
         </ul>
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>
@@ -36,19 +43,16 @@
     </nav>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
         <h2>Browse our food and restaurants.</h2>
     </div>
 </section>
 
-<!-- Search Section -->
 <section class="search-section">
     <input type="text" id="search-bar" placeholder="Search for food or restaurants..." onkeyup="searchItems()">
 </section>
 
-<!-- Categories Scroll Bar -->
 <section class="categories">
     <div class="category-scroll">
         <button class="category-btn" onclick="filterCategory('All')">All</button>
@@ -61,7 +65,6 @@
     </div>
 </section>
 
-<!-- Available Food Section -->
 <section class="available-food">
     <h2>Available Options</h2>
     <div class="food-grid" id="food-grid">
@@ -70,11 +73,10 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        
-        // Ensure that MenuID is selected in the query
+
         $sql = "SELECT MenuID, ItemName, Description, Price, MenuImg, Categories FROM restaurantsmenu ORDER BY RAND() LIMIT 8";
-        
         $result = $conn->query($sql);
+
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<div class='food-item' data-category='{$row["Categories"]}'>";
@@ -82,8 +84,13 @@
                 echo "<h4>{$row["ItemName"]}</h4>";
                 echo "<p>{$row["Description"]}</p>";
                 echo "<p>Price: R{$row["Price"]}</p>";
-                // Use MenuID in the link
                 echo "<a href='Order.php?MenuID={$row["MenuID"]}'>Order Now</a>";
+                
+                // Display edit button only for admin users
+                if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin') {
+                    echo "<a href='DishEdit.php?MenuID={$row["MenuID"]}' class='edit-btn'>Edit</a>";
+                }
+                
                 echo "</div>";
             }
         } else {
@@ -94,7 +101,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="footer-top">
         <p>The Open Window Institute <br> John Vorster Drive & Nellmapius Drive <br> Southdowns, Irene <br> Centurion, 0062 <br> South Africa</p>
@@ -108,7 +114,7 @@
     </div>
     <div class="footer-bottom">
         <ul class="social-links">
-            <li><a href="https://www.instagram.com/openwindowinstitute?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
+            <li><a href="https://www.instagram.com/openwindowinstitute?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw==">Instagram</a></li>
             <li><a href="https://www.facebook.com/theopenwindow">Facebook</a></li>
             <li><a href="https://x.com/open_window_">Twitter</a></li>
             <li><a href="https://www.youtube.com/@theopenwindowschool">YouTube</a></li>
@@ -131,11 +137,7 @@
         foodItems.forEach(item => {
             const itemName = item.getAttribute('data-name').toLowerCase();
             const itemDescription = item.getAttribute('data-description').toLowerCase();
-            if (itemName.includes(searchInput) || itemDescription.includes(searchInput)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
+            item.style.display = itemName.includes(searchInput) || itemDescription.includes(searchInput) ? 'block' : 'none';
         });
     }
 

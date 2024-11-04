@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Database connection
+$conn = new mysqli("localhost", "root", "", "localbite");
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch 3 random restaurants from the table
+$sql = "SELECT RestaurantID, ResName, RestaurantImg, ResLocation FROM restaurants ORDER BY RAND() LIMIT 3";
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Error executing query: " . $conn->error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +40,14 @@
             <li><a href="#">Home</a></li>
             <li><a href="./Pages/Providers.php">Find Food</a></li>
             <li><a href="./Pages/About.php">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="./Pages/Contact.php">Contact Us</a></li>
+            
+            <!-- Only display if the user is an admin -->
+            <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
+                <li><a href="./Pages/AdminDashboard.php">Admin Dashboard</a></li>
+            <?php endif; ?>
         </ul>
+        
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>
             <a href="#" class="account">Account</a>
@@ -48,36 +74,25 @@
 </section>
 
 <!-- Features Section -->
-<h2 class="cards">Here Are Some restaurant <span>Suggestions!</span></h2>
+<h2 class="cards">Here Are Some Restaurant <span>Suggestions!</span></h2>
 <div class="view-more">
     <a href="#">View More <span>&rarr;</span></a>
 </div>
 <section class="features">
     <?php
-    // Database connection (replace with your actual connection details)
-    $conn = new mysqli("localhost", "root", "", "localbite");
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Fetch 3 random restaurants from the table
-    $sql = "SELECT ResName, RestaurantImg, ResLocation FROM restaurants ORDER BY RAND() LIMIT 3";
-    $result = $conn->query($sql);
-
     // Display each restaurant as a card
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="feature-box">';
-            echo '<img src="' . $row["RestaurantImg"] . '" alt="' . $row["ResName"] . '">';
-            echo '<h4>' . $row["ResName"] . '</h4>';
-            echo '<p>' . $row["ResLocation"] . '</p>';
-            echo '<a href="#">View Now</a>';
+            echo '<img src="' . htmlspecialchars($row["RestaurantImg"]) . '" alt="' . htmlspecialchars($row["ResName"]) . '">';
+            echo '<h4>' . htmlspecialchars($row["ResName"]) . '</h4>';
+            echo '<p>' . htmlspecialchars($row["ResLocation"]) . '</p>';
+            echo '<a href="RestView.php?RestaurantID=' . $row["RestaurantID"] . '">View Now</a>';
+
             echo '</div>';
         }
     } else {
-        echo "No restaurants found.";
+        echo "<p>No restaurants found.</p>";
     }
 
     // Close the database connection

@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "root"; // or your database username
-$password = ""; // or your database password
-$dbname = "localbite"; // your database name
+$username = "root";
+$password = ""; // Leave empty if no password
+$dbname = "localbite";
 
-// Create a connection
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +29,10 @@
             <li><a href="../Pages/Providers.php">Find Food</a></li>
             <li><a href="../Pages/About.php">About Us</a></li>
             <li><a href="../Pages/Contact.php">Contact Us</a></li>
+                <!-- Only display if the user is an admin -->
+                <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
+                <li><a href="./Pages/AdminDashboard.php">Admin Dashboard</a></li>
+            <?php endif; ?>
         </ul>
         <div class="nav-extras">
             <span class="phone-number">+27 123456789</span>
