@@ -178,7 +178,7 @@ https://drive.google.com/drive/folders/1nPBOErOFxUaCGJpRjX0U-KNzyAZpJjjl?usp=sha
 
 ### Slides
 
-
+[Summative Assessment.pdf](https://github.com/user-attachments/files/17624166/Summative.Assessment.pdf)
 
 ## License
 
