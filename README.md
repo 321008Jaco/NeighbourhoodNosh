@@ -176,10 +176,6 @@ https://drive.google.com/drive/folders/1nPBOErOFxUaCGJpRjX0U-KNzyAZpJjjl?usp=sha
 
 [Jaco Mostert 231008_DV200 T4 - Progress Milestone Check.pdf](https://github.com/user-attachments/files/17623729/Jaco.Mostert.231008_DV200.T4.-.Progress.Milestone.Check.pdf)
 
-### Slides
-
-[Summative Assessment.pdf](https://github.com/user-attachments/files/17624166/Summative.Assessment.pdf)
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
