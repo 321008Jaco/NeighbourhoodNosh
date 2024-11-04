@@ -1,0 +1,132 @@
+/* General styling for Cart Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.cart-page {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #00403D;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cart-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-items {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-size: 1rem;
+    color: #555;
+}
+
+table td {
+    font-size: 0.95rem;
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+}
+
+.product-info img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control span {
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #00403D;
+}
+
+.quantity-control input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.clear-cart-btn, .checkout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00403D;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-btn:hover, .checkout-btn:hover {
+    background-color: #333;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+}
+
+.cart-total h3 {
+    font-size: 1.2rem;
+    color: #00403D;
+    margin: 0;
+    font-weight: bold;
+}
+
+.remove-item {
+    color: #ff4d4f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.remove-item:hover {
+    color: #ff1a1a;
+}
