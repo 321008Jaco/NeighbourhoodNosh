@@ -1,4 +1,3 @@
-/* General reset */
 * {
     margin: 0;
     padding: 0;
@@ -318,7 +317,7 @@ nav {
 
 /* Footer */
 .footer {
-    background-color: #00403D; /* Matches primary color */
+    background-color: #00403D;
     color: #fff;
     text-align: center;
     padding: 50px 20px;
@@ -381,7 +380,7 @@ nav {
 }
 
 .footer-bottom ul li a:hover {
-    color: #d9ff00; /* Highlight color for hover */
+    color: #d9ff00;
 }
 
 .footer-bottom p {
@@ -396,6 +395,6 @@ nav {
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: #EDECEA; /* Matches background */
+    background-color: #EDECEA;
     clip-path: ellipse(50% 100% at 50% 0%);
 }

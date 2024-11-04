@@ -79,7 +79,7 @@ session_start();
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "<div class='food-item' data-category='{$row["Categories"]}'>";
+                echo "<div class='food-item' data-category='{$row["Categories"]}' data-name='{$row["ItemName"]}' data-description='{$row["Description"]}'>";
                 echo "<img src='{$row["MenuImg"]}' alt='{$row["ItemName"]}'>";
                 echo "<h4>{$row["ItemName"]}</h4>";
                 echo "<p>{$row["Description"]}</p>";
@@ -146,7 +146,6 @@ session_start();
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         navbar.style.top = scrollTop === 0 ? "0" : "-100px";
     });
-
 </script>
 
 </body>

@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $restaurantID = $_POST['RestaurantID'];
     $rating = $_POST['Rating'];
     $comment = $_POST['Comment'];
-    $userID = $_SESSION['userID'];  // Assuming you store user ID in session
+    $userID = $_SESSION['userID'];
 
     $sql = "INSERT INTO review (RestaurantID, UserID, Rating, Comment, Timestamp) VALUES (?, ?, ?, ?, NOW())";
     $stmt = $conn->prepare($sql);

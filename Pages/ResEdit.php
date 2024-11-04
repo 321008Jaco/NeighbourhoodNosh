@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_restaurant']))
 
     if ($deleteStmt->execute()) {
         echo "<p class='success-message'>Restaurant deleted successfully!</p>";
-        header("Location: ../Index.php"); // Redirect after deletion
+        header("Location: ../Index.php");
         exit;
     } else {
         echo "<p class='error-message'>Error deleting restaurant: " . $deleteStmt->error . "</p>";

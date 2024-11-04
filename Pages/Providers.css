@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +10,6 @@ body {
     background-color: #EDECEA;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -52,7 +50,7 @@ nav {
     border-color: #00403D;
 }
 
-/* Nav Links (Desktop View) */
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -324,7 +322,7 @@ button[type="submit"]:hover {
     }
 
 .food-item {
-    width: calc(25% - 20px); /* 25% width with gap adjustment */
+    width: calc(25% - 20px);
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -386,16 +384,15 @@ button[type="submit"]:hover {
     background-color: #333;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .food-item {
-        width: calc(50% - 20px); /* Two items per row on medium screens */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
     .food-item {
-        width: 100%; /* One item per row on small screens */
+        width: 100%;
     }
 }
 
@@ -502,7 +499,6 @@ button[type="submit"]:hover {
     clip-path: ellipse(50% 100% at 50% 0%); 
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .nav-links {
         flex-wrap: wrap;

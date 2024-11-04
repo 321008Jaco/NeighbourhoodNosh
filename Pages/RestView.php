@@ -14,7 +14,7 @@ $restaurantID = $_GET['RestaurantID'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['Rating'], $_POST['Comment'])) {
     $rating = $_POST['Rating'];
     $comment = $_POST['Comment'];
-    $userID = $_SESSION['UserID']; // Assuming there's a UserID stored in the session
+    $userID = $_SESSION['UserID'];
 
     // Insert the review into the database
     $sql_insert_review = "INSERT INTO review (RestaurantID, UserID, Rating, Comment, Timestamp) VALUES (?, ?, ?, ?, NOW())";

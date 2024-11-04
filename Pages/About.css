@@ -10,7 +10,6 @@ body {
     background-color: #EDECEA;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -215,24 +214,24 @@ nav {
 .paragraphs {
     display: flex;
     justify-content: space-between;
-    gap: 40px; /* Adds space between paragraphs */
+    gap: 40px;
 }
 
 .paragraphs p {
     font-size: 18px;
     color: #666;
-    width: 45%; /* Each paragraph takes 45% of the width */
+    width: 45%;
     line-height: 1.6;
     text-align: left;
 }
 
 @media (max-width: 768px) {
     .paragraphs {
-        flex-direction: column; /* Stacks paragraphs on smaller screens */
+        flex-direction: column;
     }
 
     .paragraphs p {
-        width: 100%; /* Each paragraph takes full width on smaller screens */
+        width: 100%;
     }
 }
 
@@ -241,12 +240,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px; /* Adds spacing between the image and paragraph */
+    gap: 40px;
     margin-top: 40px;
 }
 
 .empower-img {
-    width: 45%; /* Adjusts the width of the image */
+    width: 45%;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -255,23 +254,23 @@ nav {
     font-size: 18px;
     color: #666;
     line-height: 1.6;
-    width: 50%; /* Adjusts the width of the paragraph */
+    width: 50%;
     text-align: left;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .empower-section {
-        flex-direction: column; /* Stacks the image and text on top of each other */
+        flex-direction: column;
         text-align: center;
     }
 
     .empower-img, .empower-section p {
-        width: 100%; /* Full width for both the image and text on smaller screens */
+        width: 100%;
     }
 
     .empower-section p {
-        text-align: center; /* Center text on mobile */
+        text-align: center;
     }
 }
 

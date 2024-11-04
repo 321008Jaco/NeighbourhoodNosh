@@ -28,6 +28,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 50px;
+    margin-top: 50px;
 }
 
 /* Contact Form */
@@ -98,6 +99,7 @@ body {
 
 .info-box {
     width: 48%;
+    margin-top: 50px;
 }
 
 .info-box i {

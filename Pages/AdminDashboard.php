@@ -71,7 +71,6 @@ $conn->close();
             <li><a href="./Pages/About.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
             
-            <!-- Only display if the user is an admin -->
             <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
                 <li><a href="./Pages/AdminDashboard.php">Admin Dashboard</a></li>
             <?php endif; ?>

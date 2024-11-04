@@ -38,7 +38,7 @@ nav {
     border-color: #00403D;
 }
 
-/* Nav Links (Desktop View) */
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -156,8 +156,6 @@ nav {
     height: 150px; 
     color: #fff;
 }
-
-/* Retain navigation styling as specified */
 
 /* Restaurant Details */
 .restaurant-details {

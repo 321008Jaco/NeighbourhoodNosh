@@ -9,7 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - LocalBite</title>
     <link rel="stylesheet" href="Contact.css">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -27,7 +26,7 @@ session_start();
             <li><a href="../Pages/Providers.php">Find Food</a></li>
             <li><a href="../Pages/About.php">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
-                        <!-- Only display if the user is an admin -->
+
                         <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
                 <li><a href="../Pages/AdminDashboard.php">Admin Dashboard</a></li>
             <?php endif; ?>

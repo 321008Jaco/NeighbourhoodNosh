@@ -29,7 +29,6 @@ session_start();
             <li><a href="../Pages/Providers.php">Find Food</a></li>
             <li><a href="../Pages/About.php">About Us</a></li>
             <li><a href="../Pages/Contact.php">Contact Us</a></li>
-                <!-- Only display if the user is an admin -->
                 <?php if (isset($_SESSION['UserType']) && $_SESSION['UserType'] === 'admin'): ?>
                 <li><a href="./Pages/AdminDashboard.php">Admin Dashboard</a></li>
             <?php endif; ?>
@@ -51,7 +50,7 @@ session_start();
 <section class="hero">
     <div class="container">
         <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt ligula sit amet justo dapibus, in vestibulum odio vehicula.</p>
+        <p>Welcome to LocalBite, your gateway to discovering delicious local food options from a variety of nearby restaurants.</p>
     </div>
 </section>
 
@@ -87,17 +86,17 @@ session_start();
         <p>At LocalBite, we are committed to providing local food vendors with the tools and resources they need to expand their business. By connecting them to customers who are seeking fresh, local produce, we help vendors increase their visibility and sales.</p>
         <div class="growth-cards">
             <div class="growth-card">
-                <i class="fas fa-users"></i> <!-- Icon for Professional Team -->
+                <i class="fas fa-users"></i>
                 <h3>Professional Team</h3>
                 <p>Our team works closely with vendors to ensure they are well-prepared and able to meet customer demands, ensuring a smooth experience for everyone.</p>
             </div>
             <div class="growth-card">
-                <i class="fas fa-bullseye"></i> <!-- Icon for Target-Oriented -->
+                <i class="fas fa-bullseye"></i>
                 <h3>Target-Oriented</h3>
                 <p>We tailor our platform to meet the needs of our customers, ensuring local food vendors get the exposure they need to grow their businesses quickly.</p>
             </div>
             <div class="growth-card">
-                <i class="fas fa-check-circle"></i> <!-- Icon for Success Guarantee -->
+                <i class="fas fa-check-circle"></i>
                 <h3>Success Guarantee</h3>
                 <p>Our system is designed to guarantee success by providing vendors with constant access to a growing customer base that values fresh, local food.</p>
             </div>

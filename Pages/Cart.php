@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $price = $_POST['price'];
     $spice_level = isset($_POST['spice_level']) ? $_POST['spice_level'] : '';
     $instructions = isset($_POST['instructions']) ? $_POST['instructions'] : '';
-    $image_url = $_POST['image_url']; // Get the image URL from the form
+    $image_url = $_POST['image_url'];
 
     // Check if item already exists in cart to update quantity
     $found = false;
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'price' => $price,
             'spice_level' => $spice_level,
             'instructions' => $instructions,
-            'image_url' => $image_url // Store the image URL in the cart
+            'image_url' => $image_url
         ];
     }
 }

@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
     <input type="hidden" name="menu_id" value="<?php echo $item['MenuID']; ?>">
     <input type="hidden" name="item_name" value="<?php echo $item['ItemName']; ?>">
     <input type="hidden" name="price" value="<?php echo $item['Price']; ?>">
-    <input type="hidden" name="image_url" value="<?php echo $item['MenuImg']; ?>"> <!-- Make sure this is included -->
+    <input type="hidden" name="image_url" value="<?php echo $item['MenuImg']; ?>">
     
     <label>Choose your spice level</label>
     <input type="radio" name="spice_level" value="Mild"> Mild

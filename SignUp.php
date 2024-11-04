@@ -1,5 +1,4 @@
 <?php
-// Include the database configuration file
 include 'Config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute and check for success
         if ($stmt->execute()) {
             echo "<script>alert('Registration successful! Redirecting to login page...');</script>";
-            header("Location: Login.php"); // Redirect to login page after successful registration
+            header("Location: Login.php");
             exit();
         } else {
             echo "Error: " . $stmt->error;

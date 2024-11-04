@@ -77,7 +77,7 @@ $conn->close();
 
             <button type="submit">LOG IN</button>
             <p id="error-message"></p>
-            <p><a href="#">Forgot Password?</a></p> <!-- Add functionality later -->
+            <p><a href="#">Forgot Password?</a></p>
         </form>
     </div>
 </div>

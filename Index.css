@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -131,7 +130,6 @@ nav {
     fill: #00403D; 
 }
 
-/* Media Queries for Responsive Navbar */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -315,7 +313,7 @@ nav {
     font-size: 0.9em;
     font-weight: bold;
     color: #fff;
-    background-color: #00403D; /* Dark green color */
+    background-color: #00403D;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -324,7 +322,7 @@ nav {
 }
 
 .edit-button:hover {
-    background-color: #333; /* Darker shade for hover effect */
+    background-color: #333;
 }
 
 /* Why Us Section */
@@ -366,7 +364,7 @@ nav {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    flex: 1; /* Ensure all cards take equal space */
+    flex: 1;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -492,7 +490,6 @@ nav {
     clip-path: ellipse(50% 100% at 50% 0%); 
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .nav-links {
         flex-wrap: wrap;
@@ -559,17 +556,17 @@ nav {
 
 @media (max-width: 1024px) {
     .why-us-cards {
-        flex-wrap: wrap; /* Wrap the cards on smaller screens */
+        flex-wrap: wrap; 
     }
 
     .why-us-card {
-        width: 45%; /* Make cards smaller so they fit two per row */
+        width: 45%; 
     }
 }
 
 @media (max-width: 768px) {
     .why-us-cards {
-        flex-direction: column; /* Stack the cards on small screens */
+        flex-direction: column; 
     }
 
     .why-us-card {

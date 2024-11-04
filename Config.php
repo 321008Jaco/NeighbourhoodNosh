@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Leave empty if no password
+$password = "";
 $dbname = "localbite";
 
 // Create connection
